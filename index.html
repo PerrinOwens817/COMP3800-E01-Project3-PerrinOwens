@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h1>Predict Battery Drain</h1>
+    <form method="post" action="/predict">
+        <!-- Your form fields here -->
+        <input type="text" name="AppUsageTime" placeholder="App Usage Time (min/day)">
+        <input type="text" name="ScreenOnTime" placeholder="Screen On Time (hours/day)">
+        <input type="text" name="NumberOfAppsInstalled" placeholder="Number of Apps Installed">
+        <input type="text" name="DataUsage" placeholder="Data Usage (MB/day)">
+        <input type="text" name="DeviceModel" placeholder="Device Model">
+        <input type="text" name="OperatingSystem" placeholder="Operating System">
+        <input type="text" name="Gender" placeholder="Gender">
+        <input type="text" name="UserBehaviorClass" placeholder="User Behavior Class">
+        <button type="submit">Predict</button>
+    </form>
+    {% if prediction_text %}
+        <h2>Prediction: {{ prediction_text }}</h2>
+    {% endif %}
+</body>
+</html>
